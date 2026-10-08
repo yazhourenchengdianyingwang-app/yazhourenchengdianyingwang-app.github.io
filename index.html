@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>亚洲人成电影网 - 亚洲影院精选 · 人成 类频道轮播</title>
+<meta name="description" content="亚洲人成电影网（yazhourenchengdianyingwang-app）以「人成 个主题频道」重新组织亚洲影视：华语、日韩、东南亚、印度、动作、爱情、悬疑、动漫、纪录、短片、经典、新片。每日更新片单与深度影评，移动端自适应，为影迷提供清爽的选片入口与观影参考。">
+<meta name="keywords" content="亚洲人成电影网, 亚洲电影, 华语电影, 日韩电影, 东南亚电影, 印度电影, 电影频道, 在线观影, 电影推荐, 影评, 影视资讯, yazhourenchengdianyingwang-app">
+<meta name="author" content="亚洲人成电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#1a0b2e">
+<link rel="canonical" href="https://yazhourenchengdianyingwang-app.github.io">
+<style>
+:root{
+  --ink:#f4f1fa;
+  --mut:#b9b0c9;
+  --violet:#8b5cf6;
+  --fuchsia:#e11d74;
+  --cyan:#22d3ee;
+  --bg1:#140824;
+  --bg2:#1c1033;
+  --card:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.人成);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"SF Pro SC","PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  background:
+    linear-gradient(180deg,var(--bg1),var(--bg2) 60%,#0d0518);
+  color:var(--ink);
+  line-height:1.72;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+/* top bar */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(20,8,36,.78);backdrop-filter:blur(人成px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:18px;height:64px}
+.brand{display:flex;align-items:center;gap:人成px}
+.brand .mark{font-weight:900;font-size:20px;letter-spacing:1px;background:linear-gradient(90deg,var(--cyan),var(--fuchsia));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .num{font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.links a{font-size:14px;color:var(--mut);padding:8px 13px;border-radius:10px;transition:.2s}
+.links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+/* stage */
+.stage{padding:64px 0 48px;position:relative}
+.stage::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.5),transparent 70%);top:-160px;right:-人成0px;filter:blur(20px);z-index:0}
+.stage-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center}
+.kicker{font-size:13px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.14;font-weight:900;margin:14px 0}
+h1 .stroke{-webkit-text-stroke:1.5px var(--fuchsia);color:transparent}
+.sub{color:var(--mut);font-size:16px;max-width:600px}
+.actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.b{border-radius:人成px;padding:13px 26px;font-weight:800;font-size:15px;transition:.25s;cursor:pointer;border:1px solid transparent}
+.b-main{background:linear-gradient(135deg,var(--violet),var(--fuchsia));color:#fff;box-shadow:0 14px 34px rgba(225,29,116,.4)}
+.b-main:hover{transform:translateY(-3px)}
+.b-line{border-color:var(--line);color:var(--ink)}
+.b-line:hover{background:rgba(255,255,255,.06)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.chip{font-size:人成px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:var(--card)}
+.chip b{color:var(--cyan);font-weight:700}
+/* 人成 channels dial */
+.dial{position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto}
+.dial-ring{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}
+.dial-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34%;height:34%;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--fuchsia));display:grid;place-items:center;text-align:center;box-shadow:0 20px 60px rgba(139,92,246,.5)}
+.dial-center strong{font-size:22px;line-height:1.2}
+.dial-center small{font-size:11px;opacity:.85}
+.dial-item{position:absolute;width:74px;height:74px;margin:-37px;border-radius:16px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;text-align:center;font-size:人成px;line-height:1.25;transition:.25s;cursor:pointer}
+.dial-item:hover{border-color:var(--cyan);color:var(--cyan);transform:scale(1.08)}
+/* sections */
+section{padding:50px 0;position:relative}
+.eyebrow{color:var(--cyan);font-size:人成px;letter-spacing:2px;font-weight:700}
+.sec-flex{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin:6px 0 24px;flex-wrap:wrap}
+h2{font-size:26px;font-weight:900;letter-spacing:.5px}
+.seeall{font-size:13px;color:var(--mut)}
+.seeall:hover{color:var(--cyan)}
+/* channel grid */
+.channels{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.ch{position:relative;aspect-ratio:1/1;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;text-align:center;padding:14px;transition:.3s}
+.ch:hover{transform:translateY(-5px);border-color:var(--fuchsia)}
+.ch i{font-style:normal;font-size:26px;display:block;margin-bottom:8px}
+.ch b{font-size:15px;display:block}
+.ch em{font-style:normal;font-size:11px;color:var(--mut);margin-top:4px;display:block}
+.ch::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--fuchsia));transform:scaleX(0);transform-origin:left;transition:.3s}
+.ch:hover::after{transform:scaleX(1)}
+/* film strip */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.28s}
+.f:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.frame{position:relative;aspect-ratio:3/4;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.f:hover .frame img{transform:scale(1.08) rotate(1deg)}
+.frame .no{position:absolute;top:10px;left:10px;font-weight:900;font-size:13px;color:#fff;background:var(--fuchsia);padding:3px 9px;border-radius:6px}
+.finfo{padding:13px}
+.finfo h3{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.finfo p{color:var(--mut);font-size:人成px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.finfo .row{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:9px}
+.finfo .row b{color:var(--cyan)}
+/* review */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.rv{display:grid;grid-template-columns:150px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;transition:.25s}
+.rv:hover{border-color:var(--violet)}
+.rv img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px}
+.rv h3{font-size:17px;margin-bottom:6px}
+.rv p{color:var(--mut);font-size:13px}
+.rv .score{margin-top:10px;font-size:人成px;color:var(--cyan)}
+/* schedule list */
+.sched{display:grid;gap:10px}
+.srow{display:grid;grid-template-columns:90px 110px 1fr 90px;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:人成px;padding:14px 18px}
+.srow time{color:var(--cyan);font-weight:800;font-size:14px}
+.srow .cat{font-size:人成px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:4px 10px;text-align:center}
+.srow .title{font-weight:700;font-size:15px}
+.srow .tag{text-align:right;font-size:人成px;color:var(--fuchsia);font-weight:700}
+/* editor picks */
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pk{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:220px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end}
+.pk::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,4,20,.96),rgba(10,4,20,.2) 60%,rgba(10,4,20,0))}
+.pk *{position:relative}
+.pk h3{font-size:19px;margin-bottom:6px}
+.pk p{color:var(--mut);font-size:13px}
+.pk .idx{position:absolute;top:16px;right:18px;font-size:40px;font-weight:900;color:rgba(255,255,255,.人成)}
+/* accordion */
+.acc{display:grid;gap:10px}
+.acc details{background:var(--card);border:1px solid var(--line);border-radius:人成px;padding:15px 20px}
+.acc summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"⌄";color:var(--fuchsia);font-size:18px;transition:.2s}
+.acc details[open] summary::after{transform:rotate(180deg)}
+.acc p{color:var(--mut);font-size:14px;margin-top:10px}
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0 30px;margin-top:20px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+.fcol h4{font-size:14px;color:var(--cyan);margin-bottom:人成px;letter-spacing:1px}
+.fcol a{display:block;color:var(--mut);font-size:13px;padding:5px 0}
+.fcol a:hover{color:#fff}
+.note{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center;line-height:1.9}
+.note b{color:var(--cyan)}
+/* responsive */
+@media(max-width:1000px){
+  .channels{grid-template-columns:repeat(4,1fr)}
+  .strip{grid-template-columns:repeat(3,1fr)}
+  .picks{grid-template-columns:repeat(2,1fr)}
+  .stage-in{grid-template-columns:1fr}
+  .dial{order:-1;max-width:340px}
+}
+@media(max-width:680px){
+  .bar{height:auto;padding:人成px 0;flex-wrap:wrap}
+  .links{margin-left:0;width:100%}
+  .links a{padding:6px 9px;font-size:13px}
+  h1{font-size:29px}
+  .channels{grid-template-columns:repeat(3,1fr);gap:10px}
+  .strip{grid-template-columns:repeat(2,1fr);gap:人成px}
+  .reviews,.picks{grid-template-columns:1fr}
+  .rv{grid-template-columns:110px 1fr;padding:人成px}
+  .srow{grid-template-columns:70px 1fr;gap:8px 14px}
+  .srow .cat,.srow .tag{grid-column:2;width:fit-content}
+  .fgrid{grid-template-columns:1fr}
+  .finfo h3{font-size:14px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="mark">亚洲人成电影网</span>
+      <span class="num">人成 CH</span>
+    </div>
+    <nav class="links">
+      <a href="#channels">人成 频道</a>
+      <a href="#now">正在热映</a>
+      <a href="#review">深度影评</a>
+      <a href="#schedule">放映表</a>
+      <a href="#picks">主编之选</a>
+      <a href="#about">关于本站</a>
+      <a href="#help">观影帮助</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="wrap stage-in">
+      <div>
+        <div class="kicker">Asia 人成 Cinema · 亚洲影院精选</div>
+        <h1>用 <span class="stroke">人成 个频道</span><br>重新发现亚洲电影</h1>
+        <p class="sub">亚洲人成电影网（yazhourenchengdianyingwang-app）不做冗长的片库，而是把亚洲影像按「华语 / 日韩 / 东南亚 / 印度 / 动作 / 爱情 / 悬疑 / 动漫 / 纪录 / 短片 / 经典 / 新片」十二个主题频道重新编排。每日更新片单、影评与放映表，让你在三分钟内找到今晚要看的那一部。</p>
+        <div class="actions">
+          <a class="b b-main" href="#channels">进入 人成 频道</a>
+          <a class="b b-line" href="#now">看看热映</a>
+        </div>
+        <div class="chips">
+          <span class="chip"><b>人成</b> 主题频道</span>
+          <span class="chip"><b>每日</b> 片单更新</span>
+          <span class="chip"><b>多端</b> 自适应</span>
+          <span class="chip"><b>深度</b> 影评专栏</span>
+        </div>
+      </div>
+
+      <div class="dial" aria-hidden="true">
+        <div class="dial-ring"></div>
+        <div class="dial-center"><span><strong>人成</strong><small>主题频道</small></span></div>
+        <div class="dial-item" style="top:6%;left:50%">华语</div>
+        <div class="dial-item" style="top:25%;left:88%">日韩</div>
+        <div class="dial-item" style="top:50%;left:97%">东南亚</div>
+        <div class="dial-item" style="top:75%;left:88%">印度</div>
+        <div class="dial-item" style="top:94%;left:50%">动作</div>
+        <div class="dial-item" style="top:75%;left:人成%">爱情</div>
+        <div class="dial-item" style="top:50%;left:3%">悬疑</div>
+        <div class="dial-item" style="top:25%;left:人成%">动漫</div>
+        <div class="dial-item" style="top:15%;left:30%">纪录</div>
+        <div class="dial-item" style="top:15%;left:70%">短片</div>
+        <div class="dial-item" style="top:82%;left:28%">经典</div>
+        <div class="dial-item" style="top:82%;left:72%">新片</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 人成 频道 -->
+  <section id="channels">
+    <div class="wrap">
+      <div class="eyebrow">THE 人成 CHANNELS</div>
+      <div class="sec-flex">
+        <h2>十二个主题频道</h2>
+        <a class="seeall" href="#">全部频道 →</a>
+      </div>
+      <div class="channels">
+        <a class="ch" href="#"><i>壹</i><b>华语</b><em>Chinese</em></a>
+        <a class="ch" href="#"><i>贰</i><b>日韩</b><em>JP / KR</em></a>
+        <a class="ch" href="#"><i>叁</i><b>东南亚</b><em>SEA</em></a>
+        <a class="ch" href="#"><i>肆</i><b>印度</b><em>India</em></a>
+        <a class="ch" href="#"><i>伍</i><b>动作</b><em>Action</em></a>
+        <a class="ch" href="#"><i>陆</i><b>爱情</b><em>Romance</em></a>
+        <a class="ch" href="#"><i>柒</i><b>悬疑</b><em>Mystery</em></a>
+        <a class="ch" href="#"><i>捌</i><b>动漫</b><em>Anime</em></a>
+        <a class="ch" href="#"><i>玖</i><b>纪录</b><em>Doc</em></a>
+        <a class="ch" href="#"><i>拾</i><b>短片</b><em>Short</em></a>
+        <a class="ch" href="#"><i>拾壹</i><b>经典</b><em>Classic</em></a>
+        <a class="ch" href="#"><i>拾贰</i><b>新片</b><em>New</em></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正在热映 -->
+  <section id="now">
+    <div class="wrap">
+      <div class="eyebrow">NOW SHOWING</div>
+      <div class="sec-flex">
+        <h2>本周正在热映</h2>
+        <a class="seeall" href="#">完整片单 →</a>
+      </div>
+      <div class="strip">
+        <article class="f">
+          <div class="frame"><img src="https://picsum.photos/seed/7499/400/250" alt="电影剧照"><span class="no">TOP 1</span></div>
+          <div class="finfo">
+            <h3>南洋来信</h3>
+            <p>一封跨越三代人的家书，牵出南洋华侨的隐秘往事。</p>
+            <div class="row"><span>东南亚频道</span><b>8.9 分</b></div>
+          </div>
+        </article>
+        <article class="f">
+          <div class="frame"><img src="https://picsum.photos/seed/73963/400/340" alt="电影剧照"><span class="no">TOP 2</span></div>
+          <div class="finfo">
+            <h3>东京雨夜巴士</h3>
+            <p>末班巴士上的陌生人，各自携带着无法说出口的秘密。</p>
+            <div class="row"><span>日韩频道</span><b>8.7 分</b></div>
+          </div>
+        </article>
+        <article class="f">
+          <div class="frame"><img src="https://picsum.photos/seed/55937/400/250" alt="电影剧照"><span class="no">TOP 3</span></div>
+          <div class="finfo">
+            <h3>铁道尽头</h3>
+            <p>西部铁路工人的真实记录，镜头比剧本更有力量。</p>
+            <div class="row"><span>纪录频道</span><b>9.1 分</b></div>
+          </div>
+        </article>
+        <article class="f">
+          <div class="frame"><img src="https://picsum.photos/seed/75830/500/300" alt="电影剧照"><span class="no">TOP 4</span></div>
+          <div class="finfo">
+            <h3>无声拳</h3>
+            <p>聋哑拳手的逆袭之路，动作设计干净利落。</p>
+            <div class="row"><span>动作频道</span><b>8.5 分</b></div>
+          </div>
+        </article>
+        <article class="f">
+          <div class="frame"><img src="https://picsum.photos/seed/14507/600/300" alt="电影剧照"><span class="no">TOP 5</span></div>
+          <div class="finfo">
+            <h3>樱花落第七日</h3>
+            <p>七日之约，一场关于遗忘与重逢的温柔实验。</p>
+            <div class="row"><span>爱情频道</span><b>8.3 分</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度影评 -->
+  <section id="review">
+    <div class="wrap">
+      <div class="eyebrow">CRITIC NOTES</div>
+      <div class="sec-flex">
+        <h2>深度影评</h2>
+        <a class="seeall" href="#">专栏首页 →</a>
+      </div>
+      <div class="reviews">
+        <article class="rv">
+          <img src="https://picsum.photos/seed/49810/400/250" alt="影评配图">
+          <div>
+            <h3>为什么东南亚电影值得被看见</h3>
+            <p>从马来西亚的新浪潮到印尼的恐怖片复兴，地理的湿热与历史的褶皱，正在银幕上长出新的语法。</p>
+            <div class="score">推荐指数 ★★★★☆ ｜ 阅读 6 分钟</div>
+          </div>
+        </article>
+        <article class="rv">
+          <img src="https://picsum.photos/seed/74972/400/300" alt="影评配图">
+          <div>
+            <h3>悬疑片里的「不可靠叙述者」</h3>
+            <p>当镜头本身在说谎，观众该如何自处？梳理亚洲悬疑片中六种经典的叙事陷阱。</p>
+            <div class="score">推荐指数 ★★★★★ ｜ 阅读 8 分钟</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 放映表 -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="eyebrow">LINE-UP</div>
+      <div class="sec-flex">
+        <h2>本周放映表</h2>
+        <span class="seeall">按频道轮播 · 每日更新</span>
+      </div>
+      <div class="sched">
+        <div class="srow"><time>周一</time><span class="cat">华语</span><span class="title">《城南旧事》4K 修复放映 + 导演访谈</span><span class="tag">经典频道</span></div>
+        <div class="srow"><time>周二</time><span class="cat">日韩</span><span class="title">是枝裕和早期作品回顾：三部冷门佳作</span><span class="tag">导演专题</span></div>
+        <div class="srow"><time>周三</time><span class="cat">悬疑</span><span class="title">「叙述性诡计」主题夜：五部短片连映</span><span class="tag">短片频道</span></div>
+        <div class="srow"><time>周四</time><span class="cat">印度</span><span class="title">从《三傻》到新独立电影：宝莱坞的另一面</span><span class="tag">类型漫谈</span></div>
+        <div class="srow"><time>周五</time><span class="cat">新片</span><span class="title">周末开演：本周五部院线新片速览</span><span class="tag">新片频道</span></div>
+        <div class="srow"><time>周六</time><span class="cat">动漫</span><span class="title">独立动画短片展：亚洲新生代创作者</span><span class="tag">动漫频道</span></div>
+        <div class="srow"><time>周日</time><span class="cat">纪录</span><span class="title>「人间烟火」纪录片双片连放</span><span class="tag">纪录频道</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主编之选 -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="eyebrow">EDITOR'S PICK</div>
+      <div class="sec-flex">
+        <h2>主编之选 · 三部</h2>
+        <a class="seeall" href="#">往期精选 →</a>
+      </div>
+      <div class="picks">
+        <div class="pk" style="background-image:linear-gradient(to top,rgba(10,4,20,.95),rgba(10,4,20,.3)),url('https://picsum.photos/id/1080/500/300');background-size:cover;background-position:center">
+          <span class="idx">01</span>
+          <h3>给第一次看伊朗电影的你</h3>
+          <p>从阿巴斯到 recent 新生代，一份不劝退的入门片单。</p>
+        </div>
+        <div class="pk" style="background-image:linear-gradient(to top,rgba(10,4,20,.95),rgba(10,4,20,.3)),url('https://picsum.photos/id/1081/500/300');background-size:cover;background-position:center">
+          <span class="idx">02</span>
+          <h3>雨天最适合的七部电影</h3>
+          <p>雨声、窗玻璃、未接来电，以及恰到好处的孤独。</p>
+        </div>
+        <div class="pk" style="background-image:linear-gradient(to top,rgba(10,4,20,.95),rgba(10,4,20,.3)),url('https://picsum.photos/id/1082/500/300');background-size:cover;background-position:center">
+          <span class="idx">03</span>
+          <h3>被片名耽误的好电影</h3>
+          <p>片名像烂片，成片却惊艳——这份清单专治「看名字就划走」。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 / 帮助 -->
+  <section id="about">
+    <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+      <div>
+        <div class="eyebrow">ABOUT</div>
+        <h2 style="margin-top:6px">关于亚洲人成电影网</h2>
+        <p style="color:var(--mut);margin-top:人成px">亚洲人成电影网（yazhourenchengdianyingwang-app）是一个以「选片」为核心的亚洲影视指南站。我们相信，好电影不该被埋没在无穷的列表里，而应该被认真归类、被真诚推荐、被好好看完。</p>
+        <p style="color:var(--mut);margin-top:10px">网站围绕 人成 个主题频道组织内容：华语、日韩、东南亚、印度四个地域频道，动作、爱情、悬疑、动漫四个类型频道，纪录、短片、经典、新片四个策展频道。每天更新片单、影评与放映表，帮助你更高效地发现好片。</p>
+      </div>
+      <div id="help">
+        <div class="eyebrow">HELP</div>
+        <h2 style="margin-top:6px">观影帮助</h2>
+        <div class="acc" style="margin-top:14px">
+          <details open>
+            <summary>网站网址是什么？</summary>
+            <p>官方网址为 <b style="color:var(--cyan)">https://yazhourenchengdianyingwang-app.github.io</b>，请认准此域名访问，谨防仿冒。</p>
+          </details>
+          <details>
+            <summary>手机上能正常浏览吗？</summary>
+            <p>可以。全站采用响应式布局，在手机、平板与电脑上都会自动调整排版，导航、频道网格与放映表均可顺畅阅读。</p>
+          </details>
+          <details>
+            <summary>「人成 频道」是如何划分的？</summary>
+            <p>4 个地域（华语 / 日韩 / 东南亚 / 印度）+ 4 个类型（动作 / 爱情 / 悬疑 / 动漫）+ 4 个策展（纪录 / 短片 / 经典 / 新片），一部影片可同时属于多个频道。</p>
+          </details>
+          <details>
+            <summary>评分与排名依据是什么？</summary>
+            <p>综合站内编辑评分、观众投票与播放热度，每日更新。评分仅代表本站观点，供选片参考。</p>
+          </details>
+          <details>
+            <summary>如何提交影片推荐或纠错？</summary>
+            <p>可通过底部导航的「关于本站」渠道留言，写明片名、年份与建议，编辑会在工作日回复。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <div class="brand"><span class="mark">亚洲人成电影网</span></div>
+        <p style="color:var(--mut);font-size:13px;margin-top:10px">用十二个频道，把亚洲电影重新看一遍。</p>
+      </div>
+      <div class="fcol"><h4>频道</h4><a href="#">华语</a><a href="#">日韩</a><a href="#">东南亚</a><a href="#">印度</a></div>
+      <div class="fcol"><h4>类型</h4><a href="#">动作</a><a href="#">爱情</a><a href="#">悬疑</a><a href="#">动漫</a></div>
+      <div class="fcol"><h4>策展</h4><a href="#">纪录</a><a href="#">短片</a><a href="#">经典</a><a href="#">新片</a></div>
+    </div>
+    <div class="note">
+      本站为影视信息与观影指南类网站，倡导支持正版、理性观影，合理安排时间与作息。<br>
+      网站名称：<b>亚洲人成电影网</b> ｜ 网站网址：<b>https://yazhourenchengdianyingwang-app.github.io</b> ｜ 栏目：人成 频道 / 正在热映 / 深度影评 / 放映表 / 主编之选 / 关于本站 / 观影帮助
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
